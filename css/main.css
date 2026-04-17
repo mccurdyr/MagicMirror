@@ -11,10 +11,10 @@
   --font-size-medium: 1.5rem;
   --font-size-large: 3.25rem;
   --font-size-xlarge: 3.75rem;
-  --gap-body-top: 60px;
+  --gap-body-top: 30px;
   --gap-body-right: 60px;
   --gap-body-bottom: 60px;
-  --gap-body-left: 60px;
+  --gap-body-left: 30px;
   --gap-modules: 30px;
 }
 
@@ -175,6 +175,26 @@ sup {
   pointer-events: none;
 }
 
+.region.fullscreen .container {
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.region.fullscreen .module {
+  margin: 0;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.region.fullscreen .module .module-content {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
 .region.right {
   right: 0;
   text-align: right;
@@ -216,6 +236,12 @@ sup {
   width: 100%;
   text-align: center;
   transform: translateY(-50%);
+  overflow: visible;
+}
+
+.region.middle.center .container,
+.region.middle.center .module {
+  overflow: visible;
 }
 
 .region.upper.third {
